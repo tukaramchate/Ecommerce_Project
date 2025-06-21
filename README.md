@@ -1,90 +1,101 @@
-🛒 E-Commerce Product Category Module
+# **🛒 E-Commerce Product Category Module**
 
 This project is a part of an E-Commerce application focusing on Product Category Management using Java, Spring Boot, and PostgreSQL. It follows a layered architecture (Controller → Service → Repository) and provides a RESTful API for managing categories.
 
-📁 Project Structure
+### 📁 Project Structure
 
 our-application/
 │
 ├── controller/
-│   └── CategoryController.java
+│ 
+└── CategoryController.java # Handles incoming HTTP requests
 │
 ├── service/
-│   └── CategoryService.java
+│ └── CategoryService.java # Business logic for category operations
 │
 ├── repository/
-│   └── CategoryRepository.java
+│ └── CategoryRepository.java # Interface for data persistence
 │
 ├── model/
-│   └── Category.java
-│   └── CategoryDTO.java
+│ ├── Category.java # Entity class
+│ └── CategoryDTO.java # DTO for transferring data
 │
 ├── exception/
-│   └── ResourceNotFoundException.java
+│ └── ResourceNotFoundException.java # Custom exception for not found resources
 │
 └── main/
-    └── Application.java
+└── Application.java # Spring Boot application entry point
 
 
-🔧 Technologies Used
-Java 17
-Spring Boot 3.x
-Spring Data JPA
-PostgreSQL
-Lombok
-Maven
-REST API
+### 🔧 Technologies Used
+* Java 17
+* Spring Boot 3.x* 
+* Spring Data JPA
+* PostgreSQL
+* Lombok
+* Maven
+* REST API
 
-📌 Features
-Create a new category
-Retrieve all categories with pagination and sorting
-Update an existing category
-Delete a category by ID
+### 📌 Features
 
-📡 API Endpoints
-API Name	Endpoint	Method	Purpose	Request Body	Request Parameters	Response
-Create Category	/api/admin/category	POST	Create a new category	Category	None	CategoryDTO
-Get Categories	/api/public/categories	GET	Retrieve list of categories	None	pageNumber, pageSize, sortBy, sortOrder	CategoryResponse
-Update Category	/api/admin/categories/{categoryId}	PUT	Update an existing category	Category	categoryId	CategoryDTO
-Delete Category	/api/admin/categories/{categoryId}	DELETE	Delete an existing category	None	categoryId	CategoryDTO
+1. Create a new category
+2. Retrieve all categories with pagination and sorting
+3. Update an existing category
+4. Delete a category by ID
 
-🧠 Application Architecture
-Layered Architecture
-Controller Layer: Handles HTTP requests.
-Service Layer: Business logic and validation.
-Repository Layer: Communicates with the PostgreSQL database.
+### 📡 API Endpoints
 
-Flow:
+#### Category Management API
 
-Browser (Client)
-    ↓
-Controller → Service → Repository → Database
-    ↑
-  Response Back to Client
+This API allows admins and public users to perform CRUD operations on categories. Below is the list of available endpoints, their methods, purposes, and required/requested data.
+
+#### API Endpoints
+
+| **API Name**        | **Endpoint**                              | **Method** | **Purpose**                    | **Request Body** | **Request Parameters**                       | **Response**       |
+|---------------------|-------------------------------------------|------------|--------------------------------|------------------|------------------------------------------------|--------------------|
+| Create Category     | `/api/admin/category`                     | POST       | Create a new category          | `Category`       | None                                           | `CategoryDTO`      |
+| Get Categories      | `/api/public/categories`                  | GET        | Retrieve list of categories    | None             | `pageNumber`, `pageSize`, `sortBy`, `sortOrder` | `CategoryResponse` |
+| Update Category     | `/api/admin/categories/{categoryId}`      | PUT        | Update an existing category    | `Category`       | `categoryId`                                   | `CategoryDTO`      |
+| Delete Category     | `/api/admin/categories/{categoryId}`      | DELETE     | Delete an existing category    | None             | `categoryId`                                   | `CategoryDTO`      |
+
+#### Models
+
+#### Category (Request Body)
 
 
-🛠️ Setup Instructions
-Clone the Repository
-git clone https://github.com/your-username/ecommerce-category-module.git
-cd ecommerce-category-module
-Configure Database
+## 🛠️ Setup Instructions
 
-Update application.properties:
+### 1. Clone the Repository
+
+   git clone https://github.com/your-username/ecommerce-category-module.git
+   cd ecommerce-category-module
+
+### 2. Configure Database
+ Update application.properties:
 spring.datasource.url=jdbc:postgresql://localhost:5432/yourdbname
 spring.datasource.username=yourusername
 spring.datasource.password=yourpassword
 spring.jpa.hibernate.ddl-auto=update
+✅ Make sure PostgreSQL is installed and running.
 
-Run the Application
-./mvnw spring-boot:run
-Access API
-Swagger or Postman for testing endpoints.
-Server runs at http://localhost:8080
+### 3. Run the Application
+
+   ./mvnw spring-boot:run
+
+### 4. Access the API
+
+   Base URL: http://localhost:8080
+
+Use Swagger UI or Postman for testing endpoints.
 
 📦 Future Enhancements
-Integrate Product APIs
-Add JWT-based Authentication
-Add Role-based Access (Admin vs User)
-Frontend using React or Angular
+🔐 Integrate JWT-based Authentication
 
+🔑 Add Role-based Access (Admin vs User)
 
+🧩 Integrate Product APIs
+
+🌐 Build a Frontend using React or Angular
+
+🧑‍💻 Contributors
+Your Name – @your-github
