@@ -48,14 +48,20 @@ This API allows admins and public users to perform CRUD operations on categories
 ### 1. Clone the Repository
 
    git clone https://github.com/tukaramchate/Ecommerce_Project.git
+   
    cd ecommerce-category-module
 
 ### 2. Configure Database
  Update application.properties:
+
 spring.datasource.url=jdbc:postgresql://localhost:5432/yourdbname
+
 spring.datasource.username=yourusername
+
 spring.datasource.password=yourpassword
+
 spring.jpa.hibernate.ddl-auto=update
+
 ✅ Make sure PostgreSQL is installed and running.
 
 ### 3. Run the Application
