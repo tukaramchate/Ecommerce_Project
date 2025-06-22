@@ -47,7 +47,7 @@ This API allows admins and public users to perform CRUD operations on categories
 
 ### 1. Clone the Repository
 
-   git clone https://github.com/your-username/ecommerce-category-module.git
+   git clone [https://github.com/your-username/ecommerce-category-module.git](https://github.com/tukaramchate/Ecommerce_Project.git)
    cd ecommerce-category-module
 
 ### 2. Configure Database
