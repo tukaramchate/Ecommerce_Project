@@ -3,28 +3,8 @@
 This project is a part of an E-Commerce application focusing on Product Category Management using Java, Spring Boot, and PostgreSQL. It follows a layered architecture (Controller → Service → Repository) and provides a RESTful API for managing categories.
 
 ### 📁 Project Structure
+![image](https://github.com/user-attachments/assets/cc5c20d8-46fa-4782-a404-e1973a74453d)
 
-our-application/
-│
-├── controller/
-│ 
-└── CategoryController.java # Handles incoming HTTP requests
-│
-├── service/
-│ └── CategoryService.java # Business logic for category operations
-│
-├── repository/
-│ └── CategoryRepository.java # Interface for data persistence
-│
-├── model/
-│ ├── Category.java # Entity class
-│ └── CategoryDTO.java # DTO for transferring data
-│
-├── exception/
-│ └── ResourceNotFoundException.java # Custom exception for not found resources
-│
-└── main/
-└── Application.java # Spring Boot application entry point
 
 
 ### 🔧 Technologies Used
