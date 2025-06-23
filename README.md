@@ -3,28 +3,8 @@
 This project is a part of an E-Commerce application focusing on Product Category Management using Java, Spring Boot, and PostgreSQL. It follows a layered architecture (Controller → Service → Repository) and provides a RESTful API for managing categories.
 
 ### 📁 Project Structure
+![image](https://github.com/user-attachments/assets/cc5c20d8-46fa-4782-a404-e1973a74453d)
 
-our-application/
-│
-├── controller/
-│ 
-└── CategoryController.java # Handles incoming HTTP requests
-│
-├── service/
-│ └── CategoryService.java # Business logic for category operations
-│
-├── repository/
-│ └── CategoryRepository.java # Interface for data persistence
-│
-├── model/
-│ ├── Category.java # Entity class
-│ └── CategoryDTO.java # DTO for transferring data
-│
-├── exception/
-│ └── ResourceNotFoundException.java # Custom exception for not found resources
-│
-└── main/
-└── Application.java # Spring Boot application entry point
 
 
 ### 🔧 Technologies Used
@@ -67,15 +47,21 @@ This API allows admins and public users to perform CRUD operations on categories
 
 ### 1. Clone the Repository
 
-   git clone https://github.com/your-username/ecommerce-category-module.git
+   git clone https://github.com/tukaramchate/Ecommerce_Project.git
+   
    cd ecommerce-category-module
 
 ### 2. Configure Database
  Update application.properties:
+
 spring.datasource.url=jdbc:postgresql://localhost:5432/yourdbname
+
 spring.datasource.username=yourusername
+
 spring.datasource.password=yourpassword
+
 spring.jpa.hibernate.ddl-auto=update
+
 ✅ Make sure PostgreSQL is installed and running.
 
 ### 3. Run the Application
