@@ -1,87 +1,157 @@
-# **🛒 E-Commerce Product Category Module**
+# 🛒 sb-ecom — Spring Boot E-Commerce API
 
-This project is a part of an E-Commerce application focusing on Product Category Management using Java, Spring Boot, and PostgreSQL. It follows a layered architecture (Controller → Service → Repository) and provides a RESTful API for managing categories.
+A fully functional backend REST API for an e-commerce application built with Spring Boot. This project is designed for educational purposes as part of the [EmbarkX Spring Boot Course](https://github.com/EmbarkXOfficial/spring-boot-course) and includes all core functionalities such as user authentication, product management, cart, and order processing.
 
-### 📁 Project Structure
-![image](https://github.com/user-attachments/assets/cc5c20d8-46fa-4782-a404-e1973a74453d)
+---
 
+## 🚀 Features
 
+- 🔐 JWT-based Authentication and Role-Based Authorization
+- 📦 Product and Category Management
+- 🛒 Shopping Cart Functionality
+- ✅ Order Placement and History
+- 🧾 DTO-Based Clean API Responses
+- 🔍 Pagination, Filtering, and Searching
+- 📦 MySQL/PostgreSQL Support (configurable)
+- ⚙️ Exception Handling and Input Validation
+- 🧪 Unit and Integration Testing Support
+- 🌍 RESTful API Design
 
-### 🔧 Technologies Used
-* Java 17
-* Spring Boot 3.x* 
-* Spring Data JPA
-* PostgreSQL
-* Lombok
-* Maven
-* REST API
+---
 
-### 📌 Features
+## 🧰 Tech Stack
 
-1. Create a new category
-2. Retrieve all categories with pagination and sorting
-3. Update an existing category
-4. Delete a category by ID
+| Layer         | Technology                            |
+|---------------|----------------------------------------|
+| Backend       | Java, Spring Boot, Spring Web          |
+| ORM/Database  | Spring Data JPA, Hibernate, MySQL      |
+| Security      | Spring Security, JWT                   |
+| Build Tool    | Maven                                  |
+| Dev Tools     | Lombok, Spring Boot DevTools           |
+| Validation    | Jakarta Bean Validation (JSR-380)      |
+| Testing       | JUnit, Mockito                         |
 
-### 📡 API Endpoints
+---
 
-#### Category Management API
+## ⚙️ Getting Started
 
-This API allows admins and public users to perform CRUD operations on categories. Below is the list of available endpoints, their methods, purposes, and required/requested data.
+### 1. Clone the repository
 
-#### API Endpoints
+```bash
+git clone https://github.com/EmbarkXOfficial/spring-boot-course.git
+cd spring-boot-course/sb-ecom
+```
 
-| **API Name**        | **Endpoint**                              | **Method** | **Purpose**                    | **Request Body** | **Request Parameters**                       | **Response**       |
-|---------------------|-------------------------------------------|------------|--------------------------------|------------------|------------------------------------------------|--------------------|
-| Create Category     | `/api/admin/category`                     | POST       | Create a new category          | `Category`       | None                                           | `CategoryDTO`      |
-| Get Categories      | `/api/public/categories`                  | GET        | Retrieve list of categories    | None             | `pageNumber`, `pageSize`, `sortBy`, `sortOrder` | `CategoryResponse` |
-| Update Category     | `/api/admin/categories/{categoryId}`      | PUT        | Update an existing category    | `Category`       | `categoryId`                                   | `CategoryDTO`      |
-| Delete Category     | `/api/admin/categories/{categoryId}`      | DELETE     | Delete an existing category    | None             | `categoryId`                                   | `CategoryDTO`      |
+### 2. Configure database
 
-#### Models
+Update `src/main/resources/application.yml`:
 
-#### Category (Request Body)
+```yaml
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/sb_ecom
+    username: your_mysql_user
+    password: your_mysql_password
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+```
 
+> 💡 Create the database `sb_ecom` manually in MySQL/PostgreSQL if needed.
 
-## 🛠️ Setup Instructions
+---
 
-### 1. Clone the Repository
+### 3. Run the application
 
-   git clone https://github.com/tukaramchate/Ecommerce_Project.git
-   
-   cd ecommerce-category-module
+```bash
+mvn spring-boot:run
+```
 
-### 2. Configure Database
- Update application.properties:
+The API will be accessible at:  
+📍 `http://localhost:8080/api/`
 
-spring.datasource.url=jdbc:postgresql://localhost:5432/yourdbname
+---
 
-spring.datasource.username=yourusername
+## 📁 Project Structure
 
-spring.datasource.password=yourpassword
+```
+sb-ecom/
+├── controller/        # API endpoints
+├── service/           # Business logic
+├── repository/        # Data access layer
+├── model/             # Entities and DTOs
+├── config/            # JWT, Security configs
+├── exception/         # Global error handling
+└── application.yml    # App configuration
+```
 
-spring.jpa.hibernate.ddl-auto=update
+---
 
-✅ Make sure PostgreSQL is installed and running.
+## 🔐 Authentication
 
-### 3. Run the Application
+- Register and login endpoints return a JWT token.
+- Use the token in the `Authorization` header for protected routes.
 
-   ./mvnw spring-boot:run
+```http
+Authorization: Bearer <your_jwt_token>
+```
 
-### 4. Access the API
+---
 
-   Base URL: http://localhost:8080
+## 🧪 Running Tests
 
-Use Swagger UI or Postman for testing endpoints.
+```bash
+mvn test
+```
 
-📦 Future Enhancements
-🔐 Integrate JWT-based Authentication
+---
 
-🔑 Add Role-based Access (Admin vs User)
+## 📦 Example API Endpoints
 
-🧩 Integrate Product APIs
+| Method | Endpoint               | Description              |
+|--------|------------------------|--------------------------|
+| POST   | `/api/auth/register`   | Register new user        |
+| POST   | `/api/auth/login`      | Authenticate and get JWT |
+| GET    | `/api/products`        | Get all products         |
+| POST   | `/api/cart/add`        | Add item to cart         |
+| POST   | `/api/orders/place`    | Place an order           |
 
-🌐 Build a Frontend using React or Angular
+---
 
-🧑‍💻 Contributors
-Your Name – @tukaram chate
+## 📌 Environment Variables (Optional)
+
+You can externalize database and JWT secret via environment variables:
+
+```env
+DB_URL=jdbc:mysql://localhost:3306/sb_ecom
+DB_USERNAME=your_mysql_user
+DB_PASSWORD=your_mysql_password
+JWT_SECRET=your_secret_key
+```
+
+---
+
+## 🤝 Contribution
+
+1. Fork the repository
+2. Create your feature branch:  
+   `git checkout -b feature/my-feature`
+3. Commit your changes:  
+   `git commit -m 'Add new feature'`
+4. Push to the branch:  
+   `git push origin feature/my-feature`
+5. Open a Pull Request
+
+---
+
+## 👨‍🏫 Author
+
+Developed as part of the **Spring Boot Course by EmbarkX**  
+Instructor: [Faisal Memon](https://github.com/faisal-memon)
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
