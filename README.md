@@ -147,9 +147,9 @@ JWT_SECRET=your_secret_key
 
 ---
 
-## 👨‍🏫 Devloper
+## 👨‍🏫 Developer
 
-Devloper Name : [Tukaram Chate](https://github.com/tukaramchate)
+Developer Name : [Tukaram Chate](https://github.com/tukaramchate)
 
 ---
 
