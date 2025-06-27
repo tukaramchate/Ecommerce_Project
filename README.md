@@ -1,6 +1,8 @@
 # 🛒 sb-ecom — Spring Boot E-Commerce API
 
-A fully functional backend REST API for an e-commerce application built with Spring Boot. This project is designed for educational purposes as part of the [EmbarkX Spring Boot Course](https://github.com/EmbarkXOfficial/spring-boot-course) and includes all core functionalities such as user authentication, product management, cart, and order processing.
+ Developed a fully functional backend REST API for an e-commerce application using Spring Boot. The project supports secure JWT-based authentication, role-based authorization, product and category management, shopping cart functionality, and order placement. Follows clean architecture with controller–service–repository layers, integrates MySQL via JPA/Hibernate, and uses Maven for build management.
+
+
 
 ---
 
@@ -38,7 +40,7 @@ A fully functional backend REST API for an e-commerce application built with Spr
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/EmbarkXOfficial/spring-boot-course.git
+git clone https://github.com/tukaramchate/Ecommerce_Project.git
 cd spring-boot-course/sb-ecom
 ```
 
@@ -145,10 +147,9 @@ JWT_SECRET=your_secret_key
 
 ---
 
-## 👨‍🏫 Author
+## 👨‍🏫 Devloper
 
-Developed as part of the **Spring Boot Course by EmbarkX**  
-Instructor: [Faisal Memon](https://github.com/faisal-memon)
+Devloper Name : [Tukaram Chate](https://github.com/tukaramchate)
 
 ---
 
